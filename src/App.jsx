@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CountryList from "./CountryList";
 import styles from "./styles";
+import Footer from "./Footer";
 
 const App = () => {
   //state. 먼저 useState를 사용하여 hook을 사용해야 한다. 상태를 적용받은 ui는 자동으로 바뀐다.
@@ -12,6 +13,7 @@ const App = () => {
     { no: 3, country: "피지", visited: false },
     { no: 4, country: "콜롬비아", visited: false },
   ]);
+  const [theme, setTheme] = useState("basic");
 
   let msg = <i>world</i>;
   const add = (x, y) => {
@@ -27,6 +29,7 @@ const App = () => {
       <hr style={styles.dashStyle}></hr>
       {add(4, 5)}
       <CountryList countries={countries} />
+      <Footer theme={theme} />
     </div>
   );
 };
